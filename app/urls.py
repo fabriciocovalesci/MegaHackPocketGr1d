@@ -28,5 +28,6 @@ urlpatterns = [
 ] 
 
 
-# chave api d453aa14-2997-40c6-94f8-4fd73ea37e3e
+# curl -X GET "https://gateway.gr1d.io/sandbox/dadoscadastrais/v1/consultas/v1/L0011/01261049055" -H "accept: application/json"
 
+# chave 19904100-ab50-4b0b-88aa-e23940426c31

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'app.web',
     'app.cliente',
     'crispy_forms',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,4 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/conta/login"
 
+CORS_ORIGIN_ALLOW_ALL = True
