@@ -12,7 +12,6 @@ class UserForm(forms.ModelForm):
         fields = ['first_name', 'last_name',
                   'email', 'username',
                   'password']
-        # excludes = ['']
         
         label = {
             'password': 'Password'
@@ -20,11 +19,9 @@ class UserForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         if kwargs.get('instance'):
-            # We get the 'initial' keyword argument or initialize it
-            # as a dict if it didn't exist.                
+                
             initial = kwargs.setdefault('initial', {})
-            # The widget for a ModelMultipleChoiceField expects
-            # a list of primary key for the selected data.
+
             if kwargs['instance'].groups.all():
                 initial['role'] = kwargs['instance'].groups.all()[0]
             else:
