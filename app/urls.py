@@ -28,5 +28,5 @@ urlpatterns = [
 ] 
 
 
-
+# chave api d453aa14-2997-40c6-94f8-4fd73ea37e3e
 

@@ -29,6 +29,9 @@
     <header>
       <nav class="menu text-center text-white">
         <a>Seguranço</a>
+        <p class="change-form-p">
+          Já possui uma conta? <a href="/conta/login"></a>
+        </p>
       </nav>
     </header>
     <!-- FIM HEADER -->
@@ -36,7 +39,6 @@
     <!-- BANNER -->
     <section
       class="bg-cover bg-no-repeat banner"
-
       style="background-image: url({% static 'imagens/family.jpg' %});"
     >
       <div class="overlap-banner">
@@ -195,7 +197,49 @@
     <section class="container-formulario">
       <div class="container text-center">
         <h1>Formulario para saber o quão você está protegido na sua vida</h1>
-        <form></form>
+        <form id="formId">
+          <table>
+            <tr>
+              <td>Nome:</td>
+              <td>
+                <input
+                  type="text"
+                  size="100"
+                  id="inputNomeId"
+                  name="nome"
+                  placeholder="nome"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Email:</td>
+              <td>
+                <input
+                  type="text"
+                  size="100"
+                  id="inputEmailId"
+                  name="email"
+                  placeholder="email"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>CPF:</td>
+              <td>
+                <input
+                  type="text"
+                  size="100"
+                  id="inputCpfId"
+                  name="cpf"
+                  placeholder="cpf"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><input type="submit" value="Submit" /></td>
+            </tr>
+          </table>
+        </form>
       </div>
     </section>
     <!-- FIM FORMULARIO -->
@@ -206,10 +250,7 @@
     <!-- FIM RODAPE -->
     <!-- ARQUIVOS IMPORTADOS JAVASCRIPT -->
 
-    <script
-      type="text/javascript"
-      src="{% static 'js/jquery.js' %}"
-    ></script>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
     <script
       type="text/javascript"
       src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"
