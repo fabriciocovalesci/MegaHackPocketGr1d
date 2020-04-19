@@ -1,0 +1,25 @@
+{% extends  'index.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Entrar{% endblock %}
+
+{% block content %}
+<div>
+
+                <h4>Entrar no To Do List</h4>
+        
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">
+        
+                    {{ form|crispy }}
+
+                    <button type="submit" >Entrar</button>
+                </form>
+
+                <p >Quer criar uma conta? <a href="/accounts/register">Clique aqui!</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

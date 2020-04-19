@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registre-se para usar o To Do{% endblock %}
+
+{% block content %}
+<div >
+    <div >
+        <div>
+            <div >
+                <h4 >Registre-se para usar o To Do</h4>
+        
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">
+        
+                    {{ form|crispy }}
+
+                    <button type="submit" >Registrar</button>
+                </form>
+
+                <p >Já possui uma conta? <a href="/accounts/login">Clique aqui!</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
