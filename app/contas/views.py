@@ -6,4 +6,4 @@ from django.views import generic
 class Registrar(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
-    template_name = 'templates/registration/register.html'
+    template_name = 'registration/register.html'

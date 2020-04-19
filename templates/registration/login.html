@@ -1,25 +1,26 @@
-{% extends  'index.html' %}
-{% load crispy_forms_tags %}
-
-{% block title %}Entrar{% endblock %}
-
-{% block content %}
-<div>
-
-                <h4>Entrar no To Do List</h4>
-        
-                <form method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ next }}">
-        
-                    {{ form|crispy }}
-
-                    <button type="submit" >Entrar</button>
-                </form>
-
-                <p >Quer criar uma conta? <a href="/accounts/register">Clique aqui!</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}
+{% load static %}
+<html>
+    <head>
+        <title>Employee Management System</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    </head>
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td><label for="username">Username</label></td>
+                    <td><input type="text" name="username" id="username" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password</label>
+                    </td>
+                    <td><input type="password" name="password" id="password" required></td>
+                </tr>
+                <p style="color: red;">{{error}}</p>
+            </table>
+            <button type="submit">Login</button>
+        </form>
+    </body>
+</html>
