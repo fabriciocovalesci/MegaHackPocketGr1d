@@ -20,9 +20,9 @@ from app.web.views import home, corretor, corretorpainel, cliente, clienteCursos
 urlpatterns = [
     path('', home),
     path('admin/', admin.site.urls),
-    path('corretor/', corretor),
-    path('corretorpainel/', corretorpainel),
-    path('cliente/', cliente),
+    path('corretor', corretor),
+    path('corretorpainel', corretorpainel),
+    path('cliente', cliente),
     path('clientecursos', clienteCursos),
     path('conta/', include('app.web.urls')),
     path('conta/', include('django.contrib.auth.urls')),

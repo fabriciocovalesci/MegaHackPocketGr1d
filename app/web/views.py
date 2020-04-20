@@ -17,13 +17,7 @@ class Login(generic.CreateView):
     template_name = 'registration/register.html'
 
 
-@login_required(login_url='/conta/login')
-def Corretor(request):
-    return render(request, 'index.html')
-
-
-
-@login_required(login_url='/conta/login')
+@login_required()
 def DadosAPIProboc(requests):
     url = 'https://gateway.gr1d.io/sandbox/dadoscadastrais/v1/consultas/v1/L0011/'
     cpf_cliente = Cliente.cpf
@@ -38,7 +32,7 @@ def DadosAPIProboc(requests):
         return redirect ('index.html')
 
 
-@login_required(login_url='/conta/login')
+@login_required()
 def DadosAPIInforcar(requests):
     url = 'https://gateway.gr1d.io/sandbox/infocar/cnh/v1/INFOCAR_CNH'
     cpf_cliente = Cliente.cpf
@@ -53,16 +47,20 @@ def DadosAPIInforcar(requests):
     else:
         return redirect ('index.html')
 
-@login_required(login_url='/conta/login')
+
+@login_required()
 def corretor(request):
     return render(request, 'PainelCorretor/painel.html')
 
-@login_required(login_url='/conta/login')
+
 def corretorpainel(request):
     return render(request, 'PainelCorretor/pageCorretora.html')
 
+
+@login_required()
 def cliente(request):
     return render(requests, 'PainelCliente/painelCliente.html')
 
+@login_required()
 def clienteCursos(request):
     return render(requests, 'PainelCliente/cursos.html')
