@@ -5,6 +5,7 @@ from django.views import generic
 import requests
 from django.contrib.auth.decorators import login_required
 from app.cliente.models import Cliente
+import json
 
 def home(request):
     return render(request, 'index.html')
@@ -20,6 +21,8 @@ class Login(generic.CreateView):
 def Corretor(request):
     return render(request, 'index.html')
 
+
+
 @login_required(login_url='/conta/login')
 def DadosAPIProboc(requests):
     url = 'https://gateway.gr1d.io/sandbox/dadoscadastrais/v1/consultas/v1/L0011/'
@@ -34,6 +37,7 @@ def DadosAPIProboc(requests):
     else:
         return redirect ('index.html')
 
+
 @login_required(login_url='/conta/login')
 def DadosAPIInforcar(requests):
     url = 'https://gateway.gr1d.io/sandbox/infocar/cnh/v1/INFOCAR_CNH'
@@ -44,6 +48,9 @@ def DadosAPIInforcar(requests):
 }
     response = requests.request("POST", url, headers=headers, data = cpf_cliente)
     if response.status_code == 200:
-        return response.json()
+        objeto =  response.json()
+        return objeto
     else:
         return redirect ('index.html')
+
+
