@@ -15,17 +15,16 @@ Including another URLconf
 """
 from django.urls import path, include
 from django.contrib import admin
-from app.web.views import home
+from app.web.views import home, corretor, corretorpainel, cliente, clienteCursos
 
 urlpatterns = [
     path('', home),
     path('admin/', admin.site.urls),
+    path('corretor/', corretor),
+    path('corretorpainel/', corretorpainel),
+    path('cliente/', cliente),
+    path('clientecursos', clienteCursos),
     path('conta/', include('app.web.urls')),
     path('conta/', include('django.contrib.auth.urls')),
   
 ] 
-
-
-# curl -X GET "https://gateway.gr1d.io/sandbox/dadoscadastrais/v1/consultas/v1/L0011/01261049055" -H "accept: application/json"
-
-# chave 19904100-ab50-4b0b-88aa-e23940426c31

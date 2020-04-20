@@ -53,4 +53,16 @@ def DadosAPIInforcar(requests):
     else:
         return redirect ('index.html')
 
+@login_required(login_url='/conta/login')
+def corretor(request):
+    return render(request, 'PainelCorretor/painel.html')
 
+@login_required(login_url='/conta/login')
+def corretorpainel(request):
+    return render(request, 'PainelCorretor/pageCorretora.html')
+
+def cliente(request):
+    return render(requests, 'PainelCliente/painelCliente.html')
+
+def clienteCursos(request):
+    return render(requests, 'PainelCliente/cursos.html')
