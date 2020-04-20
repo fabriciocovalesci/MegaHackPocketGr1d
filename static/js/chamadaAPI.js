@@ -11,12 +11,12 @@ const dados = $.ajax({
   });
 
 
-let botao = $('#botaoEnvida')
+let botao = $('#botaoEnvida').addEventListener("click", function(event){
+    event.preventDefault()
+    console.log(dados)
+  });
 
-let envia = (function dados() {
-    event.preventDefault(),
-    console.log(botao)
-})
 
-   
+
+
 
